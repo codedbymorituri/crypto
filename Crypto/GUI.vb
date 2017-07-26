@@ -16,14 +16,14 @@ Public Class GUI
         If c.Cryption(CryptionString, PassPhrase, SaltValue, HashAlgorithm, PasswordIterations, InitVector, KeySize) = True Then
             Me.TextBoxEncrypted.Text = c.CipherText
         Else
-            MessageBox.Show(c.ErrorMessage, "YBCryptoAdmin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(c.ErrorMessage, "Crypto", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
         c.TypeOfCryption = Crypto.CryptionType.Decrypt
         If c.Cryption(c.CipherText, PassPhrase, SaltValue, HashAlgorithm, PasswordIterations, InitVector, KeySize) = True Then
             Me.TextBoxDecrypted.Text = c.PlainText
         Else
-            MessageBox.Show(c.ErrorMessage, "YBCryptoAdmin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(c.ErrorMessage, "Crypto", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
